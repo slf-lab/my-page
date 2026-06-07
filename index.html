@@ -53,6 +53,12 @@
             max-width: 600px;
             margin: 0 auto 20px; /* 卡片之间上下间距 */
             box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+            transition: all 0.3s ease;
+        }
+        /* 核心新增：卡片悬浮效果*/
+        .card:hover {
+            transform: translateY(-8px); /* 向上浮动8px */
+            box-shadow: 0 12px 40px rgba(31, 38, 135, 0.25); /* 加深阴影 */
         }
         /* 卡片标题 */
         .card-title {
