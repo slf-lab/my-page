@@ -2,76 +2,79 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>时连峰的个人主页</title>
+    <title>我的个人主页</title>
     <style>
-       * {
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        /* 动态渐变背景核心代码 */
         body {
             text-align: center;
-            padding: 50px 20px;
-            font-family: "微软雅黑", sans-serif;
-            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            padding: 60px 20px;
+            font-family: -apple-system, BlinkMacSystemFont, "微软雅黑", sans-serif;
+            /* 柔和动态渐变背景 */
+            background: linear-gradient(-45deg, #d4f1f4, #75e2ff, #92c9f1, #b983ff);
             background-size: 400% 400%;
-            animation: gradient 15s ease infinite;
+            animation: softGradient 18s ease infinite;
             min-height: 100vh;
-            color: white;
+            color: #2c3e50;
         }
-        @keyframes gradient {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
+        @keyframes softGradient {
+            0%   { background-position: 0% 50%; }
+            50%  { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
+        /* 新增：内容卡片样式 磨砂+圆角+阴影 */
+        .card {
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 20px;
+            padding: 40px 30px;
+            max-width: 700px;
+            margin: 0 auto;
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+        }
         .avatar {
-            width: 150px;
-            height: 150px;
+            width: 160px;
+            height: 160px;
             border-radius: 50%;
-            margin: 20px auto;
+            margin: 0 auto 25px;
             object-fit: cover;
-            border: 5px solid white;
-            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+            border: 5px solid rgba(255,255,255,0.8);
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
         }
         h1 {
-            font-size: 32px;
-            margin: 10px 0;
+            font-size: 34px;
+            margin: 15px 0;
         }
         .intro {
-            font-size: 18px;
-            margin: 15px 0;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
+            font-size: 19px;
+            margin: 20px 0;
+            line-height: 1.6;
         }
         .hobby {
-            margin: 20px 0;
-            font-size: 18px;
+            margin: 25px 0;
+            font-size: 19px;
         }
         .contact {
-            margin-top: 30px;
-            font-size: 18px;
+            margin-top: 35px;
+            font-size: 19px;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
-    <!-- 圆形头像（默认是占位图，后续可以自己换） -->
-    <img class="avatar" src="https://imgchr.com/i/pmm1sPg" alt="我的照片">
-    
-    <!-- 你的名字 -->
-    <h1>时连峰</h1>
-    
-    <!-- 自我介绍 -->
-    <p class="intro">大家好！这是我亲手制作并发布的个人网页，正在学习编程和网页制作，超有成就感～</p>
-    
-    <!-- 我的爱好 -->
-    <div class="hobby">
-        我的爱好：看书 | 旅行 | 听音乐 | 学习新技能
+    <!-- 所有内容放进卡片容器里 -->
+    <div class="card">
+        <img class="avatar" src="https://picsum.photos/300/300" alt="我的照片">
+        <h1>我是时连峰</h1>
+        <p class="intro">大家好！这是我亲手制作并发布的个人网页，正在学习编程和网页制作，超有成就感～</p>
+        <div class="hobby">
+            我的爱好：看书 | 旅行 | 听音乐 | 学习新技能
+        </div>
+        <div class="contact">
+            邮箱：your-email@qq.com
+        </div>
     </div>
-    
-    <!-- 联系方式 -->
-    <div class="contact">
-        邮箱：shilianfeng1122@gmail.com </div>
 </body>
 </html>
