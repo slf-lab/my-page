@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <!-- 手机自适应核心标签 -->
     <meta charset="UTF-8">
+    <!-- 手机自适应必备 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>我的个人主页</title>
     <style>
@@ -15,6 +15,7 @@
             text-align: center;
             padding: 40px 15px;
             font-family: -apple-system, BlinkMacSystemFont, "微软雅黑", sans-serif;
+            /* 柔和动态渐变背景 */
             background: linear-gradient(-45deg, #d4f1f4, #75e2ff, #92c9f1, #b983ff);
             background-size: 400% 400%;
             animation: softGradient 18s ease infinite;
@@ -26,50 +27,49 @@
             50%  { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
-        .card {
-            background: rgba(255, 255, 255, 0.85);
-            border-radius: 20px;
-            padding: 30px 20px;
-            max-width: 700px;
-            margin: 0 auto;
-            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+
+        /* 头部头像区域 */
+        .head-avatar {
+            margin-bottom: 30px;
         }
         .avatar {
             width: 140px;
             height: 140px;
             border-radius: 50%;
-            margin: 0 auto 20px;
             object-fit: cover;
             border: 5px solid rgba(255,255,255,0.8);
             box-shadow: 0 0 20px rgba(0,0,0,0.1);
         }
-        h1 {
+        .name-title {
             font-size: 28px;
-            margin: 10px 0;
+            margin-top: 15px;
         }
-        .intro {
+
+        /* 通用卡片样式（所有板块共用） */
+        .card {
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 20px;
+            padding: 25px 20px;
+            max-width: 600px;
+            margin: 0 auto 20px; /* 卡片之间上下间距 */
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+        }
+        /* 卡片标题 */
+        .card-title {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: #3498db;
+        }
+        /* 卡片正文文字 */
+        .card-text {
             font-size: 17px;
-            margin: 15px 0;
             line-height: 1.6;
         }
-        .line {
-            width: 80%;
-            height: 1px;
-            background: #ccc;
-            margin: 25px auto;
-        }
-        .hobby {
-            margin: 20px 0;
-            font-size: 17px;
-        }
-        .contact {
-            margin-top: 25px;
-            font-size: 17px;
-            font-weight: bold;
-        }
+
+        /* 跳转按钮样式 */
         .btn {
             display: inline-block;
-            margin-top: 25px;
+            margin: 15px 0 30px;
             padding: 10px 25px;
             background: #75e2ff;
             color: #2c3e50;
@@ -82,6 +82,8 @@
             background: #92c9f1;
             transform: scale(1.05);
         }
+
+        /* 回到顶部悬浮按钮 */
         .back-top {
             position: fixed;
             bottom: 20px;
@@ -100,25 +102,40 @@
     </style>
 </head>
 <body>
-    <div class="card">
+    <!-- 顶部：头像 + 姓名 -->
+    <div class="head-avatar">
         <img class="avatar" src="https://picsum.photos/300/300" alt="我的照片">
-        <h1>我是时连峰</h1>
-        <p class="intro">
-            大家好！这是我亲手制作并发布的个人网页，正在学习编程和网页制作，超有成就感～
-        </p>
-
-        <div class="line"></div>
-
-        <div class="hobby">
-            我的爱好：看书 | 旅行 | 听音乐 | 学习新技能
-        </div>
-        <div class="contact">
-            邮箱：shilianfeng1122@gmail.com
-        </div>
-
-        <a href="https://github.com" class="btn">访问我的主页</a>
+        <h1 class="name-title">我是你的名字</h1>
     </div>
 
+    <!-- 卡片1：个人简介 -->
+    <div class="card">
+        <h2 class="card-title">📝 个人简介</h2>
+        <p class="card-text">
+            大家好！这是我亲手制作并发布的个人网页，正在学习编程与网页制作，在实践中不断成长，享受创作带来的乐趣。
+        </p>
+    </div>
+
+    <!-- 卡片2：兴趣爱好 -->
+    <div class="card">
+        <h2 class="card-title">🎯 兴趣爱好</h2>
+        <p class="card-text">
+            看书 | 旅行 | 听音乐 | 学习新技能 | 探索有趣的事物
+        </p>
+    </div>
+
+    <!-- 卡片3：个人技能 -->
+    <div class="card">
+        <h2 class="card-title">💡 个人技能</h2>
+        <p class="card-text">
+            基础网页制作、简单代码编写、图文排版、网页美化设计
+        </p>
+    </div>
+
+    <!-- 跳转按钮 -->
+    <a href="https://github.com" class="btn">访问我的主页</a>
+
+    <!-- 回到顶部按钮 -->
     <a href="#" class="back-top">↑</a>
 </body>
 </html>
