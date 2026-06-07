@@ -2,9 +2,10 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <!-- 手机自适应必备 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>我的个人主页</title>
+    <!-- 引入免费图标库（核心：让社交图标显示出来） -->
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -15,7 +16,6 @@
             text-align: center;
             padding: 40px 15px;
             font-family: -apple-system, BlinkMacSystemFont, "微软雅黑", sans-serif;
-            /* 柔和动态渐变背景 */
             background: linear-gradient(-45deg, #d4f1f4, #75e2ff, #92c9f1, #b983ff);
             background-size: 400% 400%;
             animation: softGradient 18s ease infinite;
@@ -28,7 +28,7 @@
             100% { background-position: 0% 50%; }
         }
 
-        /* 头部头像区域 */
+        /* 头部头像 */
         .head-avatar {
             margin-bottom: 30px;
         }
@@ -45,34 +45,52 @@
             margin-top: 15px;
         }
 
-        /* 通用卡片样式（所有板块共用） */
+        /* 通用卡片 */
         .card {
             background: rgba(255, 255, 255, 0.85);
             border-radius: 20px;
             padding: 25px 20px;
             max-width: 600px;
-            margin: 0 auto 20px; /* 卡片之间上下间距 */
+            margin: 0 auto 20px;
             box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
             transition: all 0.3s ease;
         }
-        /* 核心新增：卡片悬浮效果*/
         .card:hover {
-            transform: translateY(-8px); /* 向上浮动8px */
-            box-shadow: 0 12px 40px rgba(31, 38, 135, 0.25); /* 加深阴影 */
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(31, 38, 135, 0.25);
         }
-        /* 卡片标题 */
         .card-title {
             font-size: 22px;
             margin-bottom: 15px;
             color: #3498db;
         }
-        /* 卡片正文文字 */
         .card-text {
             font-size: 17px;
             line-height: 1.6;
         }
 
-        /* 跳转按钮样式 */
+        /* ========== 社交图标样式 ========== */
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 10px;
+        }
+        .icon-item {
+            font-size: 28px;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+        /* 图标颜色 */
+        .weixin { color: #07c160; }
+        .qq { color: #12b7f5; }
+        .email { color: #e74c3c; }
+        /* 图标悬浮动效 */
+        .icon-item:hover {
+            transform: scale(1.2);
+        }
+
+        /* 按钮 */
         .btn {
             display: inline-block;
             margin: 15px 0 30px;
@@ -89,7 +107,7 @@
             transform: scale(1.05);
         }
 
-        /* 回到顶部悬浮按钮 */
+        /* 回到顶部 */
         .back-top {
             position: fixed;
             bottom: 20px;
@@ -108,13 +126,13 @@
     </style>
 </head>
 <body>
-    <!-- 顶部：头像 + 姓名 -->
+    <!-- 头像+名字 -->
     <div class="head-avatar">
         <img class="avatar" src="https://picsum.photos/300/300" alt="我的照片">
         <h1 class="name-title">我是时连峰</h1>
     </div>
 
-    <!-- 卡片1：个人简介 -->
+    <!-- 个人简介 -->
     <div class="card">
         <h2 class="card-title">📝 个人简介</h2>
         <p class="card-text">
@@ -122,7 +140,7 @@
         </p>
     </div>
 
-    <!-- 卡片2：兴趣爱好 -->
+    <!-- 兴趣爱好 -->
     <div class="card">
         <h2 class="card-title">🎯 兴趣爱好</h2>
         <p class="card-text">
@@ -130,7 +148,7 @@
         </p>
     </div>
 
-    <!-- 卡片3：个人技能 -->
+    <!-- 个人技能 -->
     <div class="card">
         <h2 class="card-title">💡 个人技能</h2>
         <p class="card-text">
@@ -138,10 +156,26 @@
         </p>
     </div>
 
-    <!-- 跳转按钮 -->
-    <a href="https://github.com" class="btn">访问我的主页</a>
+    <!-- ========== 新增：社交联系方式卡片 ========== -->
+    <div class="card">
+        <h2 class="card-title">📮 联系我</h2>
+        <div class="social-icons">
+            <!-- 微信图标 -->
+            <div class="icon-item weixin" title="微信：你的微信号">
+                <i class="fa-brands fa-weixin"></i>
+            </div>
+            <!-- QQ图标 -->
+            <div class="icon-item qq" title="QQ：376780382">
+                <i class="fa-brands fa-qq"></i>
+            </div>
+            <!-- 邮箱图标 -->
+            <div class="icon-item email" title="邮箱：shilianfeng1122@gmail.com">
+                <i class="fa-solid fa-envelope"></i>
+            </div>
+        </div>
+    </div>
 
-    <!-- 回到顶部按钮 -->
+    <a href="https://github.com" class="btn">访问我的github</a>
     <a href="#" class="back-top">↑</a>
 </body>
 </html>
