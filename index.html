@@ -4,17 +4,26 @@
     <meta charset="UTF-8">
     <title>时连峰的个人主页</title>
     <style>
-        * {
+       * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
+        /* 动态渐变背景核心代码 */
         body {
             text-align: center;
             padding: 50px 20px;
             font-family: "微软雅黑", sans-serif;
-            background-color: #e3f2fd;
-            color: #333;
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+            min-height: 100vh;
+            color: white;
+        }
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
         .avatar {
             width: 150px;
@@ -23,12 +32,11 @@
             margin: 20px auto;
             object-fit: cover;
             border: 5px solid white;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
         }
         h1 {
             font-size: 32px;
             margin: 10px 0;
-            color: #2c3e50;
         }
         .intro {
             font-size: 18px;
@@ -44,7 +52,6 @@
         .contact {
             margin-top: 30px;
             font-size: 18px;
-            color: #3498db;
         }
     </style>
 </head>
