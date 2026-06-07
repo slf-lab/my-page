@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>我的个人主页</title>
-    <!-- 引入免费图标库（核心：让社交图标显示出来） -->
     <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -28,7 +27,6 @@
             100% { background-position: 0% 50%; }
         }
 
-        /* 头部头像 */
         .head-avatar {
             margin-bottom: 30px;
         }
@@ -45,7 +43,6 @@
             margin-top: 15px;
         }
 
-        /* 通用卡片 */
         .card {
             background: rgba(255, 255, 255, 0.85);
             border-radius: 20px;
@@ -69,28 +66,47 @@
             line-height: 1.6;
         }
 
-        /* ========== 社交图标样式 ========== */
+        /* 社交图标 + 稳定悬浮提示 */
         .social-icons {
             display: flex;
             justify-content: center;
             gap: 25px;
             margin-top: 10px;
         }
-        .icon-item {
+        .icon-box {
+            position: relative;
             font-size: 28px;
             transition: 0.3s;
             cursor: pointer;
+        }
+        .icon-box:hover {
+            transform: scale(1.2);
         }
         /* 图标颜色 */
         .weixin { color: #07c160; }
         .qq { color: #12b7f5; }
         .email { color: #e74c3c; }
-        /* 图标悬浮动效 */
-        .icon-item:hover {
-            transform: scale(1.2);
+
+        /* ========= 核心：悬浮提示框（必显示） ========= */
+        .tooltip {
+            position: absolute;
+            bottom: 120%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #2c3e50;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 6px;
+            font-size: 14px;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+        }
+        .icon-box:hover .tooltip {
+            opacity: 1;
         }
 
-        /* 按钮 */
         .btn {
             display: inline-block;
             margin: 15px 0 30px;
@@ -107,7 +123,6 @@
             transform: scale(1.05);
         }
 
-        /* 回到顶部 */
         .back-top {
             position: fixed;
             bottom: 20px;
@@ -126,13 +141,11 @@
     </style>
 </head>
 <body>
-    <!-- 头像+名字 -->
     <div class="head-avatar">
         <img class="avatar" src="https://picsum.photos/300/300" alt="我的照片">
-        <h1 class="name-title">我是时连峰</h1>
+        <h1 class="name-title">我是你的名字</h1>
     </div>
 
-    <!-- 个人简介 -->
     <div class="card">
         <h2 class="card-title">📝 个人简介</h2>
         <p class="card-text">
@@ -140,7 +153,6 @@
         </p>
     </div>
 
-    <!-- 兴趣爱好 -->
     <div class="card">
         <h2 class="card-title">🎯 兴趣爱好</h2>
         <p class="card-text">
@@ -148,7 +160,6 @@
         </p>
     </div>
 
-    <!-- 个人技能 -->
     <div class="card">
         <h2 class="card-title">💡 个人技能</h2>
         <p class="card-text">
@@ -156,26 +167,26 @@
         </p>
     </div>
 
-    <!-- ========== 新增：社交联系方式卡片 ========== -->
+    <!-- 社交图标（带悬浮提示） -->
     <div class="card">
         <h2 class="card-title">📮 联系我</h2>
         <div class="social-icons">
-            <!-- 微信图标 -->
-            <div class="icon-item weixin" title="微信：你的微信号">
+            <div class="icon-box weixin">
                 <i class="fa-brands fa-weixin"></i>
+                <span class="tooltip">微信：你的微信号</span>
             </div>
-            <!-- QQ图标 -->
-            <div class="icon-item qq" title="QQ：376780382">
+            <div class="icon-box qq">
                 <i class="fa-brands fa-qq"></i>
+                <span class="tooltip">QQ：你的QQ号</span>
             </div>
-            <!-- 邮箱图标 -->
-            <div class="icon-item email" title="邮箱：shilianfeng1122@gmail.com">
+            <div class="icon-box email">
                 <i class="fa-solid fa-envelope"></i>
+                <span class="tooltip">邮箱：your-email@qq.com</span>
             </div>
         </div>
     </div>
 
-    <a href="https://github.com" class="btn">访问我的github</a>
+    <a href="https://github.com" class="btn">访问我的主页</a>
     <a href="#" class="back-top">↑</a>
 </body>
 </html>
