@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <!-- 手机自适应核心标签 -->
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>我的个人主页</title>
     <style>
         * {
@@ -11,9 +13,8 @@
         }
         body {
             text-align: center;
-            padding: 60px 20px;
+            padding: 40px 15px;
             font-family: -apple-system, BlinkMacSystemFont, "微软雅黑", sans-serif;
-            /* 柔和动态渐变背景 */
             background: linear-gradient(-45deg, #d4f1f4, #75e2ff, #92c9f1, #b983ff);
             background-size: 400% 400%;
             animation: softGradient 18s ease infinite;
@@ -25,56 +26,97 @@
             50%  { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
-        /* 新增：内容卡片样式 磨砂+圆角+阴影 */
         .card {
             background: rgba(255, 255, 255, 0.85);
             border-radius: 20px;
-            padding: 40px 30px;
+            padding: 30px 20px;
             max-width: 700px;
             margin: 0 auto;
             box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
         }
         .avatar {
-            width: 160px;
-            height: 160px;
+            width: 140px;
+            height: 140px;
             border-radius: 50%;
-            margin: 0 auto 25px;
+            margin: 0 auto 20px;
             object-fit: cover;
             border: 5px solid rgba(255,255,255,0.8);
             box-shadow: 0 0 20px rgba(0,0,0,0.1);
         }
         h1 {
-            font-size: 34px;
-            margin: 15px 0;
+            font-size: 28px;
+            margin: 10px 0;
         }
         .intro {
-            font-size: 19px;
-            margin: 20px 0;
+            font-size: 17px;
+            margin: 15px 0;
             line-height: 1.6;
         }
+        .line {
+            width: 80%;
+            height: 1px;
+            background: #ccc;
+            margin: 25px auto;
+        }
         .hobby {
-            margin: 25px 0;
-            font-size: 19px;
+            margin: 20px 0;
+            font-size: 17px;
         }
         .contact {
-            margin-top: 35px;
-            font-size: 19px;
+            margin-top: 25px;
+            font-size: 17px;
             font-weight: bold;
+        }
+        .btn {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 10px 25px;
+            background: #75e2ff;
+            color: #2c3e50;
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 17px;
+            transition: all 0.3s ease;
+        }
+        .btn:hover {
+            background: #92c9f1;
+            transform: scale(1.05);
+        }
+        .back-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 45px;
+            height: 45px;
+            background: #75e2ff;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 45px;
+            color: #fff;
+            font-size: 20px;
+            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
     </style>
 </head>
 <body>
-    <!-- 所有内容放进卡片容器里 -->
     <div class="card">
         <img class="avatar" src="https://picsum.photos/300/300" alt="我的照片">
-        <h1>我是时连峰</h1>
+        <h1>我是你的名字</h1>
         <p class="intro">大家好！这是我亲手制作并发布的个人网页，正在学习编程和网页制作，超有成就感～</p>
+
+        <div class="line"></div>
+
         <div class="hobby">
             我的爱好：看书 | 旅行 | 听音乐 | 学习新技能
         </div>
         <div class="contact">
             邮箱：your-email@qq.com
         </div>
+
+        <a href="https://github.com" class="btn">访问我的主页</a>
     </div>
+
+    <a href="#" class="back-top">↑</a>
 </body>
 </html>
